@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">noteapp</string>
+    <string name="today_s_task">Today\'s Task</string>
 </resources>
