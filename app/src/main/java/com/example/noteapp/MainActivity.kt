@@ -20,19 +20,15 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import androidx.room.Query
 import com.coding.meet.todo_app.adapters.TaskRVVBListAdapter
 import com.coding.meet.todo_app.databinding.ActivityMainBinding
-import com.coding.meet.todo_app.models.Task
-import com.coding.meet.todo_app.utils.Status
-import com.coding.meet.todo_app.utils.StatusResult
-import com.coding.meet.todo_app.utils.StatusResult.Added
-import com.coding.meet.todo_app.utils.StatusResult.Deleted
-import com.coding.meet.todo_app.utils.StatusResult.Updated
-import com.coding.meet.todo_app.utils.clearEditText
-import com.coding.meet.todo_app.utils.hideKeyBoard
-import com.coding.meet.todo_app.utils.longToastShow
-import com.coding.meet.todo_app.utils.setupDialog
-import com.coding.meet.todo_app.utils.validateEditText
-import com.coding.meet.todo_app.viewmodels.TaskViewModel
+import com.example.noteapp.TaskViewModel
+import com.example.noteapp.models.Task
+import com.example.noteapp.utils.Status
+import com.example.noteapp.utils.StatusResult
+import com.example.noteapp.utils.clearEditText
+import com.example.noteapp.utils.hideKeyBoard
+import com.example.noteapp.utils.longToastShow
 import com.example.noteapp.utils.setupDialog
+import com.example.noteapp.utils.validateEditText
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
@@ -323,16 +319,16 @@ class MainActivity : AppCompatActivity() {
                     Status.SUCCESS -> {
                         loadingDialog.dismiss()
                         when (it.data as StatusResult) {
-                            Added -> {
+                            StatusResult.Added -> {
                                 Log.d("StatusResult", "Added")
                             }
 
-                            Deleted -> {
+                            StatusResult.Deleted -> {
                                 Log.d("StatusResult", "Deleted")
 
                             }
 
-                            Updated -> {
+                            StatusResult.Updated -> {
                                 Log.d("StatusResult", "Updated")
 
                             }
